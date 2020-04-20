@@ -8,7 +8,7 @@ There are tutorials for other environments available, see [Angular Tutorial] and
 
 In this tutorial we are going to build a simple application using ECMAScript (aka JavaScript), which meant to be running under Node.js. The application would access [frusal.com] workspace, it would create a class (like a table in may ways) in the workspace and write some data to it.
 
-<details><summary><h2 style="display:inline">Prerequisites</h2></summary>
+## Prerequisites
 
 Please make sure you have the following installed:
 
@@ -28,6 +28,11 @@ Create a new NPM package, with the following commands:
 $ mkdir my-first-frusal-access-application
 $ cd my-first-frusal-access-application 
 $ npm create
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -73,6 +78,11 @@ Run the command, and answer the questions as follows:
 
 ```text
 $ npx frusal
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 If you are using any source control system like git or svn, you might want to check in any outstanding changes to isolate the changes done by this installation.
 Do you want to continue? [yes]: yes
 
@@ -97,13 +107,6 @@ Module loader [1]: 1
 Source code model location [.]: .
 
 Installing "frusal" npm dependency...
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN my-first-frusal-access-application@1.0.0 No description
-npm WARN my-first-frusal-access-application@1.0.0 No repository field.
-
-npm WARN my-first-frusal-access-application@1.0.0 No description
-npm WARN my-first-frusal-access-application@1.0.0 No repository field.
-
 
  * Frusal.com access library is successfully initialised for project my-first-frusal-access-application.
  * Next, please login and start updating your source code stabs and schema declarations.
@@ -113,10 +116,17 @@ Please read the note above [ok]: ok
 Thank you.
 ```
 
+</details>
+
 Now lets login to frusal.com:
 
 ```text
 $ npx frusal login
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 Frusal login: unit.test@fruit-salad.tech
 Password: 
 Please choose a workspace:
@@ -126,10 +136,17 @@ Workspace [1]: 1
 CONNECTED to workspace 'Unit Test' (ws_001_unit_test) as 'unit.test@fruit-salad.tech'
 ```
 
+</details>
+
 Check the status of connection and workspace:
 
 ``` text
 $ npx frusal status
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 CLI script to install and configure frusal.com workspace access library with static type checking against live schema.
 
 User preferences: /Users/alex/.npm-frusal (first in ancestry)
@@ -143,10 +160,17 @@ Classes in 'My Module':
  - Book
 ```
 
+</details>
+
 Update (create - in our case), local model source code stubs and TypeScript declarations for [Visual Studio Code] to use for static type checks and code completion (IntelliSense).
 
 ```text
-npx frusal update
+$ npx frusal update
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 Updating schema changes for workspace 'Unit Test' (ws_001_unit_test), connected as 'unit.test@fruit-salad.tech'
 Source code model location: .
 
@@ -156,10 +180,17 @@ Updating on 20/04/2020, 5:52:04 pm...
 Done
 ```
 
+</details>
+
 We can also make it to continue execution, and update the files in real time as soon as the schema changes on frusal.com.
 
 ```text
-npx frusal watch
+$ npx frusal watch
+```
+
+<details><summary>See the console output</summary>
+
+```txt
 Watching schema changes at workspace 'Unit Test' (ws_001_unit_test), connected as 'unit.test@fruit-salad.tech'...
 Source code model location: .
 
@@ -167,11 +198,13 @@ Updating on 20/04/2020, 5:54:14 pm...
 Done
 ```
 
-^ *This is very useful during development. Simply ^C to terminate this process if you no longer need it.*
+</details>
+
+^ *This could be useful during development. Simply ^C to terminate this process if you no longer need it.*
 
 Add a copy of `index.js` file which you can download from [here](./index.js).
 
-Try to run it:
+Let's try to run it:
 
 ```text
 $ node index.js
