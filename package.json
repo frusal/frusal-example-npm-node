@@ -1,0 +1,27 @@
+{
+  "name": "frusal-tutorial-node",
+  "version": "1.0.0",
+  "description": "Tutorial for building a Node.js application to access frusal.com workspace",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "run": "node index.js",
+    "frusal": "frusal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frusal/frusal-tutorial-node.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frusal/frusal-tutorial-node/issues"
+  },
+  "homepage": "https://github.com/frusal/frusal-tutorial-node#readme",
+  "dependencies": {
+    "@frusal/library-for-node": "0.0.10"
+  },
+  "devDependencies": {
+    "frusal": "0.0.10"
+  }
+}
