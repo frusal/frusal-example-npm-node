@@ -12,6 +12,7 @@ In this tutorial we are going to build a simple application using ECMAScript (ak
 
 Please make sure you have the following installed:
 
+- Windows, Linux or macOS
 - [Node.js] is an open source JavaScript runtime environment
 - [Visual Studio Code] is a popular (among JavaScript developers) and open source IDE
 
@@ -206,11 +207,11 @@ Done
 
 </details>
 
-*This could be useful during development. ^C would terminate the process.*
-
-Add a copy of `index.js` file which you can download from [here](./index.js).
+*This could be useful during development. Use ^C to terminate the process.*
 
 ## Running
+
+Create __`index.js`__ file with the content you can download from [here](./index.js).
 
 Now, let's try to run it with the following command:
 
