@@ -27,7 +27,7 @@ Create a new NPM package, with the following commands. It would take you through
 
 ```txt
 mkdir my-first-frusal-access-application
-cd my-first-frusal-access-application 
+cd my-first-frusal-access-application
 npm create
 ```
 
@@ -44,15 +44,15 @@ Use `npm install <pkg>` afterwards to install a package and
 save it as a dependency in the package.json file.
 
 Press ^C at any time to quit.
-package name: (my-first-frusal-access-application) 
-version: (1.0.0) 
-description: 
-entry point: (index.js) 
-test command: 
-git repository: 
-keywords: 
-author: 
-license: (ISC) 
+package name: (my-first-frusal-access-application)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
 About to write to /Users/alex/temp/del-me/my-first-frusal-access-application/package.json:
 
 {
@@ -213,8 +213,6 @@ Done
 
 Now, let's create persistent entity classes which is a part of our workspace schema. Usually, you would be doing it through frusal.com web UI, but for simplicity of this tutorial we are going to use a JavaScript to do that for us.
 
-*Study this script if you want to manipulate schema objects (create persistent classes and fields) from within your application code.*
-
 Create __`deploy-my-schema.js`__ file with the content you can download from [here](./deploy-my-schema.js) and run it:
 
 ```text
@@ -230,6 +228,8 @@ Schema changes deployed.
 ```
 
 </details>
+
+*Study this script if you want to manipulate schema objects (create persistent classes and fields) from within your application code.*
 
 ## Running
 
@@ -255,7 +255,7 @@ Done.
 
 </details>
 
-*We are not going into the details of how to use `session` object, `Stage` and `Transaction`, `Stage::query`, etc. It is out of scope for this tutorial. But you are encouraged to study the code in `index.js` for an example of usage the library.*
+*We are not going into the details of how to use `session` object, `Stage` and `Transaction`, `Stage::query`, etc. It is out of scope for this tutorial. But you are encouraged to study the code in `index.js` as an example of library usage.*
 
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org

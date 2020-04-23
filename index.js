@@ -29,7 +29,7 @@ async function main() {
             const module = workspace.modules.find(m => !m.system);
             console.log('Module: ' + module.name);
 
-            const entities = await stage.query({ q: 'class:'+Book.id, type: types.QPType.SOLR_QUERY, rows: 100 }).promiseArray();
+            const entities = await stage.query({ q: 'class:'+Book.id, type: types.QPType.SOLR_QUERY }).promiseArray();
             const books = /** @type {Book[]} */ ( /** @type {*} */ (entities));
 
             console.log('Found the following books already exist: ' + books.map(b => b.id))
