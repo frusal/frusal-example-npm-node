@@ -26,9 +26,9 @@ $ npm --version
 Create a new NPM package, with the following commands. It would take you through a series of questions to complete.
 
 ```txt
-$ mkdir my-first-frusal-access-application
-$ cd my-first-frusal-access-application 
-$ npm create
+mkdir my-first-frusal-access-application
+cd my-first-frusal-access-application 
+npm create
 ```
 
 <details><summary>See the console output</summary>
@@ -80,7 +80,7 @@ Run the following command to install right library dependency and configure `pro
 *Note that this initial wizard is only presented if `frusal.json` does not exist.*
 
 ```text
-$ npx frusal
+npx frusal
 ```
 
 <details><summary>See the console output</summary>
@@ -124,14 +124,14 @@ Thank you.
 Now, lets login to [frusal.com] with the following command:
 
 ```text
-$ npx frusal login
+npx frusal login
 ```
 
 <details><summary>See the console output</summary>
 
 ```txt
 Frusal login: fred@example.com
-Password: 
+Password:
 Please choose a workspace:
   [1] Unit Test
 Workspace [1]: 1
@@ -146,7 +146,7 @@ CONNECTED to workspace 'Unit Test' (ws_001_unit_test) as 'unit.test@fruit-salad.
 Check the status of the connection and the workspace:
 
 ``` text
-$ npx frusal status
+npx frusal status
 ```
 
 <details><summary>See the console output</summary>
@@ -170,7 +170,7 @@ Classes in 'My Module':
 Update (or create, in our case), the local model source code stubs and TypeScript declarations (TSD). The stubs are meant to be taken over by You for further development and maintenance. The TSDs are maintained by `npx frusal` script and used by [Visual Studio Code] IDE for source code static analysis, type validation and auto completion (IntelliSense).
 
 ```text
-$ npx frusal update
+npx frusal update
 ```
 
 <details><summary>See the console output</summary>
@@ -192,7 +192,7 @@ Done
 We could run the script with `watch` flag to keep schema files up to date in real time:
 
 ```text
-$ npx frusal watch
+npx frusal watch
 ```
 
 <details><summary>See the console output</summary>
@@ -209,6 +209,28 @@ Done
 
 *This could be useful during development. Use ^C to terminate the process.*
 
+## Workspace Schema
+
+Now, let's create persistent entity classes which is a part of our workspace schema. Usually, you would be doing it through frusal.com web UI, but for simplicity of this tutorial we are going to use a JavaScript to do that for us.
+
+*Study this script if you want to manipulate schema objects (create persistent classes and fields) from within your application code.*
+
+Create __`deploy-my-schema.js`__ file with the content you can download from [here](./deploy-my-schema.js) and run it:
+
+```text
+node --experimental-json-modules deploy-my-schema.js
+```
+
+<details><summary>See the console output</summary>
+
+```text
+Connecting to workspace "ws_001_unit_test"...
+Creating classes at module "My Module"...
+Schema changes deployed.
+```
+
+</details>
+
 ## Running
 
 Create __`index.js`__ file with the content you can download from [here](./index.js).
@@ -216,10 +238,24 @@ Create __`index.js`__ file with the content you can download from [here](./index
 Now, let's try to run it with the following command:
 
 ```text
-$ node index.js
+node index.js
 ```
 
-🚧 *... to be continued ...*
+<details><summary>See the console output</summary>
+
+```text
+Login...
+User name: Unit Test
+Workspace: Unit Test
+Module: My Module
+Found the following books already exist: b0k3f0,b0k4f0,b0k5f0,b0k6f0,b0k7f0
+New Book created: Bible
+Done.
+```
+
+</details>
+
+*We are not going into the details of how to use `session` object, `Stage` and `Transaction`, `Stage::query`, etc. It is out of scope for this tutorial. But you are encouraged to study the code in `index.js` for an example of usage the library.*
 
 [frusal.com]: https://frusal.com
 [Node.js]: https://nodejs.org
