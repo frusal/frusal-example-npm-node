@@ -235,6 +235,8 @@ Schema changes deployed.
 
 Create __`index.js`__ file with the content you can download from [here](./index.js).
 
+Change the login call arguments in it.
+
 Now, let's try to run it with the following command:
 
 ```text
