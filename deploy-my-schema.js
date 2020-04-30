@@ -1,7 +1,7 @@
 #!/usr/bin/env node --experimental-json-modules
 // @ts-check
 
-import { session, types } from '@frusal/library-for-node';
+import { session, ActualWorkspace, ClassSpec, Property } from '@frusal/library-for-node';
 import frusalJson from './frusal.json';
 
 const COMMON_DESCRIPTION = 'Created and maintained by deploy-my-schema.js';
@@ -20,7 +20,7 @@ async function main() {
     
             } else {
                 await session.workspace.withTempStageAsyncExpression(stage => {
-                    const actualWorkspace = stage.transact(tx => tx.getSingletonInstance(types.ActualWorkspace));
+                    const actualWorkspace = stage.transact(tx => tx.getSingletonInstance(ActualWorkspace));
                     const module = actualWorkspace.modules.find(m => !m.system);
                     console.log(`Creating classes at module "${module.name}"...`);
             
@@ -30,10 +30,10 @@ async function main() {
             
                         // Create new ones
                         const stringType = actualWorkspace.modules.get(0).types.find(t => t.name === 'String');
-                        const bookClass = tx.createEntity(types.ClassSpec);
+                        const bookClass = tx.createEntity(ClassSpec);
                         bookClass.name = 'Book';
                         bookClass.description = COMMON_DESCRIPTION;
-                        const bookNameProp = tx.createEntity(types.Property);
+                        const bookNameProp = tx.createEntity(Property);
                         bookNameProp.name = 'Title';
                         bookNameProp.description = 'The title of the book.';
                         bookNameProp.type = stringType;

@@ -1,4 +1,4 @@
-# Tutorial
+# Frusal Node.js Tutorial
 
 🚧 *The project is in development and is not available for general public yet.*
 
@@ -12,22 +12,21 @@ In this tutorial we are going to build a simple application using ECMAScript (ak
 
 Please make sure you have the following installed:
 
-- Windows, Linux or macOS
-- [Node.js] is an open source JavaScript runtime environment
-- [Visual Studio Code] is a popular (among JavaScript developers) and open source IDE
+- Either: Windows, Linux or macOS
+- [Node.js], which is an open source JavaScript runtime environment
+- [Visual Studio Code], which is a popular open source IDE among JavaScript developers
 
 Run the following command in the terminal to make sure node is installed properly:
 
 ```txt
-$ npm --version
-6.14.4
+npm --version
 ```
 
 Create a new NPM package, with the following commands. It would take you through a series of questions to complete.
 
 ```txt
-mkdir my-first-frusal-access-application
-cd my-first-frusal-access-application
+mkdir frusal-tutorial-node
+cd frusal-tutorial-node
 npm create
 ```
 
@@ -75,9 +74,9 @@ Is this OK? (yes) yes
 
 ## Install frusal library
 
-Run the following command to install right library dependency and configure `project.json` and create `frusal.json`. It would take you through a series of questions to complete.
+Run the following command to install frusal library dependency, configure `project.json` and create `frusal.json`. It would take you through a series of questions to complete.
 
-*Note that this initial wizard is only presented if `frusal.json` does not exist.*
+*Note that this wizard is activated if `frusal.json` file does not yet exist.*
 
 ```text
 npx frusal
@@ -140,6 +139,28 @@ CONNECTED to workspace 'Unit Test' (ws_001_unit_test) as 'unit.test@fruit-salad.
 ```
 
 </details>
+
+## Workspace Schema
+
+Now, let's create persistent entity classes which is a part of our workspace schema. Usually, you would be doing it through frusal.com web UI, but for simplicity of this tutorial we are going to use a JavaScript to do that for us.
+
+Create __`deploy-my-schema.js`__ file with the content you can download from [here](./deploy-my-schema.js) and run it:
+
+```text
+node --experimental-json-modules deploy-my-schema.js
+```
+
+<details><summary>See the console output</summary>
+
+```text
+Connecting to workspace "ws_001_unit_test"...
+Creating classes at module "My Module"...
+Schema changes deployed.
+```
+
+</details>
+
+*Study this script if you want to manipulate schema objects (create persistent classes and fields) from within your application code.*
 
 ## Daily usage
 
@@ -208,28 +229,6 @@ Done
 </details>
 
 *This could be useful during development. Use ^C to terminate the process.*
-
-## Workspace Schema
-
-Now, let's create persistent entity classes which is a part of our workspace schema. Usually, you would be doing it through frusal.com web UI, but for simplicity of this tutorial we are going to use a JavaScript to do that for us.
-
-Create __`deploy-my-schema.js`__ file with the content you can download from [here](./deploy-my-schema.js) and run it:
-
-```text
-node --experimental-json-modules deploy-my-schema.js
-```
-
-<details><summary>See the console output</summary>
-
-```text
-Connecting to workspace "ws_001_unit_test"...
-Creating classes at module "My Module"...
-Schema changes deployed.
-```
-
-</details>
-
-*Study this script if you want to manipulate schema objects (create persistent classes and fields) from within your application code.*
 
 ## Running
 
