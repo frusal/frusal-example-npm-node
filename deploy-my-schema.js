@@ -1,7 +1,8 @@
 #!/usr/bin/env node --experimental-json-modules
 // @ts-check
 
-import { session, ActualWorkspace, ClassSpec, Property } from '@frusal/library-for-node';
+import { session, ActualWorkspace, ClassSpec, Property } from 'frusal';
+// @ts-ignore
 import frusalJson from './frusal.json';
 
 const COMMON_DESCRIPTION = 'Created and maintained by deploy-my-schema.js';
