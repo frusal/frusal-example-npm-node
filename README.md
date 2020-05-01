@@ -140,14 +140,14 @@ CONNECTED to workspace 'Unit Test' (ws_001_unit_test) as 'unit.test@fruit-salad.
 
 </details>
 
-## Workspace Schema
+## Workspace schema
 
 Now, let's create persistent entity classes which is a part of our workspace schema. Usually, you would be doing it through frusal.com web UI, but for simplicity of this tutorial we are going to use a JavaScript to do that for us.
 
-Create __`deploy-my-schema.js`__ file with the content you can download from [here](./deploy-my-schema.js) and run it:
+Create __`deploy-my-schema.mjs`__ file with the content you can download from [here](./deploy-my-schema.mjs) and run it:
 
 ```text
-node --experimental-json-modules deploy-my-schema.js
+node --experimental-json-modules deploy-my-schema.mjs
 ```
 
 <details><summary>See the console output</summary>
